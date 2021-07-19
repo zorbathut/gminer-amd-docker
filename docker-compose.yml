@@ -1,0 +1,5 @@
+gminer:
+    restart: always
+    image: climage
+    devices:
+      - "/dev/dri:/dev/dri"

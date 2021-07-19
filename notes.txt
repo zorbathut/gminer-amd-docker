@@ -1,0 +1,4 @@
+./builddocker.sh && docker run --device /dev/dri:/dev/dri -t -i climage
+
+./builddocker.sh && (docker run --device /dev/dri:/dev/dri climage strace clinfo 2> clinforemote ; docker run --device /dev/dri:/dev/dri -t -i climage bash) && diff clinfotrace clinforemote | less
+
